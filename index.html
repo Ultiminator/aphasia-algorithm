@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Aphasia</title>
+</head>
+<body>
+  <div class="container">
+    <div class="question">
+      <p>Is the patient fluent?</p>
+      <span>Intact expression; No paraphasia, agramatism, paragramatism, or reduced prosody</span>
+      <label>
+        <input type="radio" name="verbal" value="true"> Yes
+      </label>
+      <label>
+        <input type="radio" name="verbal" value="false"> No
+      </label>
+    </div>
+    <div class="question">
+      <p>Can the patient comprehend?</p>
+      <span>the patient comprehends spoken messages</span>
+      <label>
+        <input type="radio" name="comprehension" value="true"> Yes
+      </label>
+      <label>
+        <input type="radio" name="comprehension" value="false"> No
+      </label>
+    </div>
+    <div class="question">
+      <p>Intact repetition?</p>
+      <span>can the person repeat words or phrases?</span>
+      <label>
+        <input type="radio" name="repetition" value="true"> Yes
+      </label>
+      <label>
+        <input type="radio" name="repetition" value="false"> No
+      </label>
+    </div>
+    <div class="question">
+      <p>can the patient name objects or concepts?</p>
+      <span>the patient doesn't have difficulty in finding the names of objects or concepts</span>
+      <label>
+        <input type="radio" name="naming" value="true"> Yes
+      </label>
+      <label>
+        <input type="radio" name="naming" value="false"> No
+      </label>
+    </div>
+    <div class="question">
+      <p>Fluent reading?</p>
+      <span>This is of no value if the comprehension is already impaired or the patient is illiterate</span>
+      <label>
+        <input type="radio" name="reading" value="true"> Yes
+      </label>
+      <label>
+        <input type="radio" name="reading" value="false"> No
+      </label>
+    </div>
+    <div class="question">
+      <p>Can the patien write?</p>
+      <span>Ignore if there is weakness or the patient is already illiterate</span>
+      <label>
+        <input type="radio" name="writing" value="true"> Yes
+      </label>
+      <label>
+        <input type="radio" name="writing" value="false"> No
+      </label>
+    </div>
+  </div>
+  <script>
+    // Build groups once
+    const groups = [...new Set(
+      Array.from(document.querySelectorAll('input[type="radio"]'))
+           .map(r => r.name)
+    )];
+  
+    function collectAnswers() {
+      const answers = {};
+      groups.forEach(name => {
+        const selected = document.querySelector(`input[name="${name}"]:checked`);
+        answers[name] = selected ? selected.value : null;
+      });
+      return answers;
+    }
+  
+    // Real-time update
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const answers = collectAnswers();
+        console.log(answers);
+        console.log(groups);
+      });
+    });
+  </script>
+  
+  
+</body>
+</html>
