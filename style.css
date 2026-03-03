@@ -19,7 +19,7 @@ body {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(150, 150, 150, 0.1);
-    margin: 10px;
+    margin: 10px 10px 100px 10px;
 }
 
 .question {
@@ -64,4 +64,16 @@ input[value="false"]:checked {
 input[value="true"]:checked {
     accent-color: rgb(100, 200, 70);
 }
-/* TODO: define a color */
+
+.result {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: rgb(100, 200, 70);
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    font-size: large;
+    word-wrap: break-word;
+}

@@ -72,32 +72,8 @@
       </label>
     </div>
   </div>
-  <script>
-    // Build groups once
-    const groups = [...new Set(
-      Array.from(document.querySelectorAll('input[type="radio"]'))
-           .map(r => r.name)
-    )];
-  
-    function collectAnswers() {
-      const answers = {};
-      groups.forEach(name => {
-        const selected = document.querySelector(`input[name="${name}"]:checked`);
-        answers[name] = selected ? selected.value : null;
-      });
-      return answers;
-    }
-  
-    // Real-time update
-    document.querySelectorAll('input[type="radio"]').forEach(radio => {
-      radio.addEventListener('change', () => {
-        const answers = collectAnswers();
-        console.log(answers);
-        console.log(groups);
-      });
-    });
-  </script>
-  
-  
+  <div class="result" id="result">Ahmed</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
