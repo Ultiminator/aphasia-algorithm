@@ -77,3 +77,20 @@ input[value="true"]:checked {
     font-size: large;
     word-wrap: break-word;
 }
+button.clear {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    padding: 10px 20px;
+    color: white;
+    background-color: rgb(255, 70, 100);
+    border: none;
+    border-radius: 1000px;
+    cursor: pointer;
+    transition: transforms ease;
+    box-shadow: 1px 1px 5px rgba(255, 70, 100, 0.3);
+}
+
+button.clear:active {
+    transform:  scale(0.95);
+}

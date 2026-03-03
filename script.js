@@ -62,3 +62,9 @@ document.querySelectorAll('input[type="radio"]').forEach(radio => {
         resultsDiv.innerHTML = result;
     });
 });
+
+// Reset button functionality
+function startOver() {
+    document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+    document.getElementById('result').style.display = 'none';
+}
