@@ -42,6 +42,8 @@ function assess(answers) {
     }else if (answers.verbal === 'true' && answers.comprehension === 'true' && answers.repetition === 'false') {
         return '<b>CONDUCTION APHASIA</b><br>The lesion mostly involves Arcuate Fasciculus';
     }else if (answers.verbal === 'true' && answers.comprehension === 'true' && answers.repetition === 'true') {
+        /* when the pt is fluent and has no impairment in comprehension and repetition, 
+           we can assess for naming, reading, and writing */
         if ((!answers.naming && !answers.reading && !answers.writing) || (answers.naming === 'false')) {
             return '<b>ANOMIC APHASIA</b><br>The lesion mostly involves Angular and Supramarginal Gyri';
         }else if (answers.writing === 'false' && answers.reading === 'false') {
@@ -53,7 +55,6 @@ function assess(answers) {
         } else {
             return 'It seems your patient does not have language impairment.<br> consider other causes of Cognitive impairment.';
         }
-        // TODO: add more aphasia types and their criteria here
     }
 }
 
