@@ -42,7 +42,17 @@ function assess(answers) {
     }else if (answers.verbal === 'true' && answers.comprehension === 'true' && answers.repetition === 'false') {
         return '<b>CONDUCTION APHASIA</b><br>The lesion mostly involves Arcuate Fasciculus';
     }else if (answers.verbal === 'true' && answers.comprehension === 'true' && answers.repetition === 'true') {
-        return '<b>ANOMIC APHASIA</b><br>The lesion mostly involves Angular and Supramarginal Gyri';
+        if ((!answers.naming && !answers.reading && !answers.writing) || (answers.naming === 'false')) {
+            return '<b>ANOMIC APHASIA</b><br>The lesion mostly involves Angular and Supramarginal Gyri';
+        }else if (answers.writing === 'false' && answers.reading === 'false') {
+            return '<b>MIXED AGRAPHIA & ALEXIA</b><br>The lesion mostly involves Angular and Supramarginal Gyri';
+        }else if (answers.writing === 'false' /*&& (answers.reading === 'true' || answers.reading === null)*/){
+            return '<b>AGRAPHIA</b><br>The lesion mostly involves Exner\'s Area';
+        } else if (answers.reading === 'false' /*&& (answers.writing === 'true' || answers.writing === null)*/) {
+            return '<b>ALEXIA</b><br>The lesion mostly involves Visual Association area';
+        } else {
+            return 'It seems your patient does not have language impairment.<br> consider other causes of Cognitive impairment.';
+        }
         // TODO: add more aphasia types and their criteria here
     }
 }
