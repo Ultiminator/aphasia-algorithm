@@ -26,23 +26,23 @@ function allAnswered(answers) {
 function assess(answers) {
     // when the pt is not fluent
     if (answers.verbal === 'false' && answers.comprehension === 'false' && answers.repetition === 'false') {
-        return '<b>GLOBAL APHASIA</b><br>with the lesion likely involving Frontal, Temporal, and Parietal operculum';
+        return '<b>GLOBAL APHASIA</b><br>with the lesion likely involves Frontal, Temporal, and Parietal operculum';
     } else if (answers.verbal === 'false' && answers.comprehension === 'false' && answers.repetition === 'true') {
-        return '<b>MIXED TRANSCORTICAL APHASIA</b><br>The lesion mostly involving Frontal and Parietal Convexity';
+        return '<b>MIXED TRANSCORTICAL APHASIA</b><br>The lesion mostly involves Frontal and Parietal Convexity';
     }else if (answers.verbal === 'false' && answers.comprehension === 'true' && answers.repetition === 'false') {
-        return '<b>BROCA\'S APHASIA</b><br>The lesion mostly involving Frontal Operculum';
+        return '<b>BROCA\'S APHASIA</b><br>The lesion mostly involves Frontal Operculum';
     }else if (answers.verbal === 'false' && answers.comprehension === 'true' && answers.repetition === 'true') {
-        return '<b>TRANSCORTICAL MOTOR APHASIA</b><br>The lesion mostly involving Frontal Convexity';
+        return '<b>TRANSCORTICAL MOTOR APHASIA</b><br>The lesion mostly involves Frontal Convexity';
     }
     // when the pt is fluent
     else if (answers.verbal === 'true' && answers.comprehension === 'false' && answers.repetition === 'false') {
-        return '<b>WERNICKE\'S APHASIA</b><br>The lesion mostly involving Posterior part of Superior Temporal Gyrus';
+        return '<b>WERNICKE\'S APHASIA</b><br>The lesion mostly involves Posterior part of Superior Temporal Gyrus';
     }else if (answers.verbal === 'true' && answers.comprehension === 'false' && answers.repetition === 'true') {
-        return '<b>TRANSCORTICAL SENSORY APHASIA</b><br>The lesion mostly involving Temporoparietal Convexity';
+        return '<b>TRANSCORTICAL SENSORY APHASIA</b><br>The lesion mostly involves Temporoparietal Convexity';
     }else if (answers.verbal === 'true' && answers.comprehension === 'true' && answers.repetition === 'false') {
-        return '<b>CONDUCTION APHASIA</b><br>The lesion mostly involving Arcuate Fasciculus';
+        return '<b>CONDUCTION APHASIA</b><br>The lesion mostly involves Arcuate Fasciculus';
     }else if (answers.verbal === 'true' && answers.comprehension === 'true' && answers.repetition === 'true') {
-        return '<b>ANOMIC APHASIA</b><br>The lesion mostly involving Angular and Supramarginal Gyri';
+        return '<b>ANOMIC APHASIA</b><br>The lesion mostly involves Angular and Supramarginal Gyri';
         // TODO: add more aphasia types and their criteria here
     }
 }

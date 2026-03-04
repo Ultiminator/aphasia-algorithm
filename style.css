@@ -42,6 +42,7 @@ footer {
 h1 {
     font-size: 26px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .question {
